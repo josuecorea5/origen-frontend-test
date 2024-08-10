@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-footage-item',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footage-item.component.css']
 })
 export class FootageItemComponent implements OnInit {
-
+  @Input() imgFootage = "";
+  @Input() mediaType = "";
   constructor() { }
 
   ngOnInit(): void {

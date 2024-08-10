@@ -1,0 +1,19 @@
+.footage-item {
+  margin-bottom: 8px;
+  position: relative;
+  cursor: pointer;
+}
+
+.footage-item img {
+  max-width: 100%;
+}
+
+.video-icon {
+  background-image: url("https://images.nasa.gov/images/badge_video-sm..png");
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+}

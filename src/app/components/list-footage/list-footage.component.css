@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footage-list {
+  columns: 4 210px;
+  column-gap: 10px;
+}
+
+
+.buttons-footage button {
+  border: 2px solid transparent;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #34373f;
+  color: white;
+  border-radius: 14px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.buttons-footage button.active {
+  background-color: #4c4d53;
+}
