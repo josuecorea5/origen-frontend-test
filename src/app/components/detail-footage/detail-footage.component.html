@@ -1,0 +1,22 @@
+<div class="detail-container">
+  <div class="container-img"
+    *ngIf="mediaType === 'image'"
+  >
+    <img [src]="sourceSrc" alt="">
+  </div>
+  <div *ngIf="mediaType === 'video'" class="container-video">
+    <video *ngIf="mediaType === 'video'" controls>
+      <source [src]="sourceSrc" type="video/mp4">
+    </video>
+  </div>
+  <div class="container-info">
+    <p class="title-footage">{{footageDetail["AVAIL:Title"]}}</p>
+    <p class="footage-id">NASA ID: <span>{{footageDetail['AVAIL:NASAID'] || ""}}</span></p>
+    <div class="info-footage">
+      <p>{{footageDetail['AVAIL:Description'] || ""}}</p>
+      <p class="date-footage">Data created: <span>{{footageDetail['AVAIL:DateCreated'] || ""}}</span></p>
+      <p class="center-footage">Center: <span>{{footageDetail['AVAIL:Center'] || ""}}</span></p>
+      <P class="keywords-footage">Keywords: <span>{{footageDetail['AVAIL:Keywords'].join(", ")}}</span></P>
+    </div>
+  </div>
+</div>

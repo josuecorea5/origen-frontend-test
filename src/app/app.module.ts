@@ -8,11 +8,13 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { ListFootageComponent } from './components/list-footage/list-footage.component';
 import { FootageItemComponent } from './components/footage-item/footage-item.component';
+import { DetailFootageComponent } from './components/detail-footage/detail-footage.component';
 @NgModule({
   declarations: [
     AppComponent,
     ListFootageComponent,
-    FootageItemComponent
+    FootageItemComponent,
+    DetailFootageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,41 @@
+.detail-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 40px;
+}
+
+.container video {
+  width: 800px;
+}
+
+.container-img img, .container-video video {
+  width: 100%;
+}
+
+.title-footage {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.footage-id, .date-footage, .center-footage, .keywords-footage {
+  font-weight: bold;
+}
+
+.date-footage span, .center-footage span, .keywords-footage span {
+  font-weight: normal;
+}
+
+.footage-id span {
+  background-color: #353740;
+  color: #DDD;
+  padding: 4px;
+  font-size: small;
+  display: inline-block;
+  padding: 4px;
+}
+
+.container-info {
+  display: flex;
+  flex-direction: column;
+}

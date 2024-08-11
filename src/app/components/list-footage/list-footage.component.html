@@ -5,12 +5,12 @@
   </div>
 
   <div *ngIf="isPopularFootages" class="footage-list">
-    <app-footage-item *ngFor="let footage of popularFootages?.collection?.items" [imgFootage]="footage.links[0].href"
+    <app-footage-item routerLink="/details/{{footage.data[0].nasa_id}}" *ngFor="let footage of popularFootages?.collection?.items" [imgFootage]="footage.links[0].href"
       [mediaType]="footage.data[0].media_type">
     </app-footage-item>
   </div>
   <div *ngIf="!isPopularFootages" class="footage-list">
-    <app-footage-item *ngFor="let footage of recentFootages?.collection?.items" [imgFootage]="footage.links[0].href"
+    <app-footage-item routerLink="/details/{{footage.data[0].nasa_id}}" *ngFor="let footage of recentFootages?.collection?.items" [imgFootage]="footage.links[0].href"
       [mediaType]="footage.data[0].media_type">
     </app-footage-item>
   </div>
