@@ -17,3 +17,9 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
+@media(max-width: 500px) {
+  .video-icon {
+    background-image: url("https://images.nasa.gov/images/badge_video..png");
+  }
+}

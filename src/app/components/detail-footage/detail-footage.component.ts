@@ -12,7 +12,17 @@ import { FootageDetail } from 'src/app/shared/interfaces/footage-detail.interfac
 })
 export class DetailFootageComponent implements OnInit {
   nasaId: string = "";
-  footageDetail!: FootageDetail;
+  
+  footageDetail: FootageDetail = {
+    "AVAIL:Center": "",
+    "AVAIL:DateCreated": "",
+    "AVAIL:Description": "",
+    "AVAIL:Keywords": [],
+    "AVAIL:MediaType": "",
+    "AVAIL:NASAID": "",
+    "AVAIL:Title": ""
+  };
+
   sourceSrc: string | undefined = "";
   mediaType: string = "";
 

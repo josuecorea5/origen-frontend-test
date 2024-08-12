@@ -1,7 +1,10 @@
 .detail-container {
   display: flex;
-  flex-wrap: nowrap;
   gap: 40px;
+}
+
+.detail-container div {
+  flex: 1;
 }
 
 .container video {
@@ -38,4 +41,14 @@
 .container-info {
   display: flex;
   flex-direction: column;
+}
+
+@media(max-width: 767px) {
+  .detail-container {
+    flex-direction: column;
+  }
+
+  .detail-container div {
+    max-width: 100%;
+  }
 }

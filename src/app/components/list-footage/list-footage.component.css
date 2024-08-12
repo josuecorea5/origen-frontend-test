@@ -1,12 +1,17 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  row-gap: 10px;
 }
 
 .footage-list {
-  columns: 4 210px;
+  columns: 4;
   column-gap: 10px;
+}
+
+.buttons-footage {
+  display: flex;
+  gap: 10px;
 }
 
 
@@ -17,11 +22,16 @@
   background-color: #4c4d53;
   color: white;
   border-radius: 14px;
-  margin-right: 8px;
   cursor: pointer;
 }
 
 .buttons-footage button.active {
   background-color: #34373f;
   border: 2px solid #34373f;
+}
+
+@media(max-width: 656px) {
+  .footage-list {
+    columns: 3;
+  }
 }
