@@ -1,4 +1,5 @@
 <div class="container">
+  <app-search-bar (searchQuery)="searchFootage($event)" ></app-search-bar>
   <div class="buttons-footage">
     <button (click)="showPopularFootages()" [ngClass]="{'active' : isPopularFootages}">Popular footages</button>
     <button (click)="showRecentFootages()" [ngClass]="{'active' : !isPopularFootages}">Recent footages</button>

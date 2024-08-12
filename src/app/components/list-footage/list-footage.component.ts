@@ -26,6 +26,10 @@ export class ListFootageComponent implements OnInit {
     this.isPopularFootages = false;
   }
 
+  searchFootage(search: string) {
+    console.log(search);
+  }
+
   private loadData() {
     this.footageService.getPopularFootages()
       .subscribe(result => {

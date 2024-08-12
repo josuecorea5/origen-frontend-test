@@ -1,0 +1,23 @@
+.search-bar {
+  display: flex;
+  justify-content: center;
+}
+
+input[type="text"] {
+  border: solid 1px #4c4d53;
+  padding: 10px;
+  border-radius: 8px;
+  margin-right: 4px;
+  display: inline-block;
+  width: 30%;
+}
+
+button {
+  padding: 10px;
+  border: solid 1px transparent;
+  cursor: pointer;
+  background: #4c4d53;
+  color: white;
+  border-radius: 8px;
+  width: 80px;
+}

@@ -9,12 +9,14 @@ import { AppComponent } from './app.component';
 import { ListFootageComponent } from './components/list-footage/list-footage.component';
 import { FootageItemComponent } from './components/footage-item/footage-item.component';
 import { DetailFootageComponent } from './components/detail-footage/detail-footage.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
     ListFootageComponent,
     FootageItemComponent,
-    DetailFootageComponent
+    DetailFootageComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
