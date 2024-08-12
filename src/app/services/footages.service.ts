@@ -42,6 +42,12 @@ export class FootagesService {
     )
   }
 
+  searchFootage(search: string): Observable<FootageResponse> {
+    return this.httpClient.get<FootageResponse>(`${this.IMAGES_URL}/search?q=${search}&media_type=image,video`).pipe(
+      catchError(err => this.handleError(err))
+    )
+  }
+
   private handleError(err: HttpErrorResponse): Observable<never> {
     let errMessage = '';
     if(err) {

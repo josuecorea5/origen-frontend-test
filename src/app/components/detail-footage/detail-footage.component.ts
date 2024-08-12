@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { forkJoin } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { forkJoin, Subject } from 'rxjs';
+import { switchMap, takeUntil } from 'rxjs/operators';
 import { FootagesService } from 'src/app/services/footages.service';
 import { FootageDetail } from 'src/app/shared/interfaces/footage-detail.interface';
 
@@ -10,7 +10,7 @@ import { FootageDetail } from 'src/app/shared/interfaces/footage-detail.interfac
   templateUrl: './detail-footage.component.html',
   styleUrls: ['./detail-footage.component.css']
 })
-export class DetailFootageComponent implements OnInit {
+export class DetailFootageComponent implements OnInit, OnDestroy {
   nasaId: string = "";
   
   footageDetail: FootageDetail = {
@@ -25,8 +25,14 @@ export class DetailFootageComponent implements OnInit {
 
   sourceSrc: string | undefined = "";
   mediaType: string = "";
+  private destroy$ = new Subject<void>();
 
   constructor(private route: ActivatedRoute, private footageService: FootagesService) { }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
 
   ngOnInit(): void {
     this.route.params.pipe(
@@ -36,9 +42,9 @@ export class DetailFootageComponent implements OnInit {
           imageDetails: this.footageService.getFootageAssetsById(this.nasaId),
           footageDetails: this.footageService.getFootageDetail(this.nasaId)
         })
-      })
+      }),
+      takeUntil(this.destroy$)
     ).subscribe(({imageDetails, footageDetails}) => {
-      console.log(imageDetails, footageDetails)
       this.footageDetail = footageDetails;
       this.mediaType = footageDetails['AVAIL:MediaType'];
       this.sourceSrc = imageDetails.collection.items.find((image) =>

@@ -1,17 +1,25 @@
 <div class="container">
-  <app-search-bar (searchQuery)="searchFootage($event)" ></app-search-bar>
+  <app-search-bar (searchQuery)="searchFootage($event)"></app-search-bar>
   <div class="buttons-footage">
     <button (click)="showPopularFootages()" [ngClass]="{'active' : isPopularFootages}">Popular footages</button>
     <button (click)="showRecentFootages()" [ngClass]="{'active' : !isPopularFootages}">Recent footages</button>
   </div>
 
   <div *ngIf="isPopularFootages" class="footage-list">
-    <app-footage-item routerLink="/details/{{footage.data[0].nasa_id}}" *ngFor="let footage of popularFootages?.collection?.items" [imgFootage]="footage.links[0].href"
+    <app-footage-item routerLink="/details/{{footage.data[0].nasa_id}}"
+      *ngFor="let footage of popularFootages?.collection?.items" [imgFootage]="footage.links[0].href"
       [mediaType]="footage.data[0].media_type">
     </app-footage-item>
   </div>
-  <div *ngIf="!isPopularFootages" class="footage-list">
-    <app-footage-item routerLink="/details/{{footage.data[0].nasa_id}}" *ngFor="let footage of recentFootages?.collection?.items" [imgFootage]="footage.links[0].href"
+  <div *ngIf="isRecentFootages" class="footage-list">
+    <app-footage-item routerLink="/details/{{footage.data[0].nasa_id}}"
+      *ngFor="let footage of recentFootages?.collection?.items" [imgFootage]="footage.links[0].href"
+      [mediaType]="footage.data[0].media_type">
+    </app-footage-item>
+  </div>
+  <div *ngIf="searchFootages?.collection?.items?.length" class="footage-list">
+    <app-footage-item routerLink="/details/{{footage.data[0].nasa_id}}"
+      *ngFor="let footage of searchFootages?.collection?.items" [imgFootage]="footage.links[0].href"
       [mediaType]="footage.data[0].media_type">
     </app-footage-item>
   </div>

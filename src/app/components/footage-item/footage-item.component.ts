@@ -5,12 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './footage-item.component.html',
   styleUrls: ['./footage-item.component.css']
 })
-export class FootageItemComponent implements OnInit {
+export class FootageItemComponent {
   @Input() imgFootage = "";
   @Input() mediaType = "";
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
